@@ -1,0 +1,78 @@
+REST - representational state transfer
+Architectural style, a standard for systems to communicate with each other.
+
+1 - Separate API into logical resources
+resource - an object or representation of a data
+e.g. movies, users, reviews
+
+2 - Structured based URL - has an endpoint - ep shouldnt have verbs - should be nouns - use http 
+
+3 - Use HTTP methods - use nouns and plural form - movies not movie ...
+we can also use ID, NAME, or any unique identifier  -  /movie/21(id)
+
+READ - GET
+CREATE - POST - NO ID - server should automatically make it.
+UPDATE - PUT - changing the whole resource/PATCH - change part of the object/resource - WITH ID
+DELETE - WITH ID or unique identifier unless we delete the whole thing
+
+CRUD - create read update delete
+
+e.g we want movies that user created
+
+then we can use:
+
+/getmoviesbyuser   ->  better to do this ->  GET  users/userId/movies
+/getmoviesbyuser   ->  better to do this ->  DELETE users/userId/movies/movieId
+
+
+4 - Use JSON data in response
+
+JSON
+ {
+      "id": 1,
+      "title": "title"
+    }
+
+
+JSEND JSON DATA 
+
+{
+  "status": "success",
+  "data": {[
+    {
+      "id": 1,
+      "title": "title"
+    }
+  ]}
+
+}
+
+JSON:API , JSON PROTOCOL
+
+
+5 - API MUST BE STATELESS
+
+All state must be handled in the client and each info should have all the info required necessary to process a certain request.
+
+/movies/nextPage - >
+in this case, the server must remember/know where it is in order to go to the next page,
+we want to avoid this when doing restful api.
+
+what to do instead:
+
+/movies/page/3
+send(4)
+
+we handle state in the client
+
+
+************************
+HANDLING GET request
+************************
+
+
+
+
+
+
+
