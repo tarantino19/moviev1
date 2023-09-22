@@ -1,14 +1,38 @@
 const express = require('express');
 const app = express();
 const fs = require ('fs');
-
-app.use(express.json())
-
 const movies = JSON.parse(fs.readFileSync('./data/movies.json'));
+const morgan = require ('morgan');
 
+app.use(express.json()) //for getting req.body req params 
+
+//3rd party middleware
+app.use(morgan('dev')) //calling it because these functions are going to return a function and they will act as a middleware - they return a middleware function
+
+//custom middleware
+const logger = (req, res, next) => {
+  console.log(`this is a custom middleware`)
+  next() //we need this so it will move on to the next middleware
+}
+app.use(logger)
+
+
+//e.g. we need to find out when the req was made
+
+const requestTime = (req, res, next) => {
+  req.requestedAt = new Date().toISOString();
+  next();
+  //remember, requestedAt or any after the req is just an object
+}
+
+app.use (requestTime)
+
+
+//functions
 const getAllMovies = (req, res) => {
   res.status(200).json({
     status: "success",
+    requestedAt: req.requestedAt,
     movieCount: movies.length,
     data: {
       movies: movies
@@ -113,12 +137,15 @@ const deleteMovie = (req, res) => {
 // app.patch ('/api/v1/movies/:id', updateMovie);
 // app.delete ('/api/v1/movies/:id', deleteMovie);
 
+const moviesRouter = express.Router();
+app.use('/api/v1/movies', moviesRouter) //middleware will only be applied to this link
+
 //METHOD 2 CHAINING
-app.route ('/api/v1/movies')
+moviesRouter.route ('/')  //we need to remove this whole path cause we are already appending
   .get(getAllMovies)
   .post(createMovie)
 
-app.route ('/api/v1/movies/:id')
+moviesRouter.route ('/:id')  //we need to remove this whole path cause we are already appending from our app.use   ...except from /:id - in our router app use we have: app.use('/api/v1/movies', moviesRouter)
   .get(getMovie)
   .patch(updateMovie)
   .delete(deleteMovie)
