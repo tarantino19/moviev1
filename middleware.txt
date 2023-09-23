@@ -31,3 +31,11 @@ moviesRouter.route ('/:id')  //we need to remove this whole path cause we are al
   .get(getMovie)
   .patch(updateMovie)
   .delete(deleteMovie)
+
+
+
+  ***  ***  ***
+  UNDERSTANDING PARAM MIDDLEWARE
+  ***  ***  ***
+
+  
