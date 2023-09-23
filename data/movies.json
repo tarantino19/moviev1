@@ -1,1 +1,62 @@
-[{"id":1,"title":"Die Hard","releaseYear":2001,"duration":130},{"id":2,"title":"Expendables","releaseYear":2008,"duration":80},{"id":3,"title":"Interstellar","releaseYear":2014,"duration":120},{"id":4,"title":"Boom Boom Clap","releaseYear":2022,"duration":130},{"id":5,"title":"Kinse","releaseYear":"2001","duration":125},{"id":6,"title":"BAHAHAHAHAA","releaseYear":"2023","duration":30}]
+[
+  {
+    "id": 1,
+    "title": "Die Hard",
+    "releaseYear": 1998,
+    "duration": 110
+  },
+  {
+    "id": 2,
+    "title": "Expendables",
+    "releaseYear": 2008,
+    "duration": 80
+  },
+  {
+    "id": 3,
+    "title": "Interstellar",
+    "releaseYear": 2014,
+    "duration": 120
+  },
+  {
+    "id": 4,
+    "title": "Boom Boom Clap",
+    "releaseYear": 2022,
+    "duration": 130
+  },
+  {
+    "id": 5,
+    "title": "Kinse",
+    "releaseYear": 2001,
+    "duration": 125
+  },
+  {
+    "id": 6,
+    "title": "I Am Become Death",
+    "releaseYear": 2023,
+    "duration": 230
+  },
+  {
+    "id": 7,
+    "title": "Galunggong",
+    "releaseYear": 2005,
+    "duration": 95
+  },
+  {
+    "id": 8,
+    "title": "Dr. Strange",
+    "releaseYear": 2016,
+    "duration": 105
+  },
+  {
+    "id": 9,
+    "title": "Lambanog",
+    "releaseYear": 1984,
+    "duration": 15
+  },
+  {
+    "id": 10,
+    "title": "Happy Birthday",
+    "releaseYear": 1993,
+    "duration": 30
+  }
+]
