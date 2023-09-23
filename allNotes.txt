@@ -132,3 +132,10 @@ however, in express, its mostly about middlewares, so thats what we did.
 CHAINING MIDDLEWARES
   *********
 
+
+  *********
+SERVING STATIC FILES 
+  *********
+
+
+express.static
