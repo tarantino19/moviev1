@@ -139,3 +139,30 @@ SERVING STATIC FILES
 
 
 express.static
+
+
+
+  *********
+ENVIRONMENT VARIABLES
+  *********
+
+development and production ENVIRONMENT
+
+/using different databases, turning logging on off,
+
+default is development
+env a global variable set by express
+
+set NODE_ENV=development
+
+create env variable by using a config FILES
+
+user uppercase as convention
+NODE_ENV=development
+USERNAME=admin
+PASSWORD=123456
+
+to format, use dotenv extension
+process.env available everywhere as long as we do this
+const dotenv = require('dotenv');
+dotenv.config({path: './config.env'});

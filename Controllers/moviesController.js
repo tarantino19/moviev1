@@ -1,7 +1,6 @@
 const fs = require ('fs');
 const movies = JSON.parse(fs.readFileSync('./data/movies.json'));
 
-
 //check id middleware
 const checkId = (req, res, next, value) => {
   console.log(`movie id is ${value}`)
